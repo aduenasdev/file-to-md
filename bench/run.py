@@ -1,4 +1,4 @@
-﻿"""Uso: python run.py <motor> <archivo>... ; escribe output/<motor>/<archivo>.md y una línea JSON con métricas."""
+"""Uso: python run.py <motor> <archivo>... ; escribe output/<motor>/<archivo>.md y una línea JSON con métricas."""
 import sys, time, pathlib, json, subprocess, os
 engine, files = sys.argv[1], sys.argv[2:]
 out = pathlib.Path("output")/engine; out.mkdir(parents=True, exist_ok=True)

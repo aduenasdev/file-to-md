@@ -1,0 +1,12 @@
+services:
+  file-to-md:
+    build:
+      context: .
+      args:
+        EXTRAS: ${EXTRAS:-light,docling}
+    env_file: [.env]
+    ports: ["8000:8000"]
+    volumes:
+      - models:/root/.cache
+volumes:
+  models:

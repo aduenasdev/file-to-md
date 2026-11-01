@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "file-to-md"
+version = "1.0.0"
+description = "Conversión de PDF, DOCX, XLSX, HTML e imágenes a Markdown con selección automática de motor"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.29", "python-multipart>=0.0.9", "pymupdf>=1.24"]
+
+[project.optional-dependencies]
+light = ["pymupdf4llm", "markitdown[docx,pptx,xlsx,xls]"]
+docling = ["docling"]
+marker = ["marker-pdf"]
+all = ["file-to-md[light,docling,marker]"]
+dev = ["pytest", "httpx", "reportlab", "python-docx", "pillow"]
+
+[project.scripts]
+file-to-md = "file_to_md.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["file_to_md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

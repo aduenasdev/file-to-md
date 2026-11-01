@@ -7,3 +7,6 @@ output/
 .pytest_cache/
 bench/tools/
 bench/.venv-*/
+examples/samples/
+results/
+data/
