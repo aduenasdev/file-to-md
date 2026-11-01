@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample responsive HTML page</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, sans-serif; color: #222; }
+  header { background: #2c3e50; color: #fff; padding: 1rem; text-align: center; }
+  nav { background: #34495e; padding: .5rem 1rem; }
+  nav ul { display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
+  nav a { color: #ecf0f1; text-decoration: none; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+  .grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  .card { background: #f7f9fb; border: 1px solid #e1e8ed; border-radius: 8px; padding: 1rem; }
+  .hero { background: linear-gradient(135deg, #3498db, #2c3e50); color: #fff; padding: 3rem 1rem; text-align: center; border-radius: 8px; }
+  footer { background: #ecf0f1; padding: 1rem; text-align: center; margin-top: 2rem; font-size: .9rem; color: #555; }
+
+  @media (min-width: 600px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 4rem 2rem; }
+  }
+  @media (min-width: 900px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #eee; }
+    .card { background: #242424; border-color: #333; }
+    footer { background: #111; color: #aaa; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Responsive design demo</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <section class="hero">
+    <h2>Resize the window</h2>
+    <p>The grid below changes from 1 column → 2 → 3 as the viewport widens.</p>
+  </section>
+  <section class="grid">
+    <div class="card"><h3>Mobile-first</h3><p>Default styles target small screens; media queries upgrade the layout.</p></div>
+    <div class="card"><h3>Fluid grid</h3><p>CSS grid + breakpoints adapt content density to viewport size.</p></div>
+    <div class="card"><h3>Dark mode</h3><p>Honors <code>prefers-color-scheme</code>: change your OS theme to test.</p></div>
+    <div class="card"><h3>Touch-friendly</h3><p>Generous spacing and large hit targets for mobile.</p></div>
+    <div class="card"><h3>Performance</h3><p>No external assets — all CSS inline for instant render.</p></div>
+    <div class="card"><h3>Accessible</h3><p>Semantic landmarks, keyboard-navigable links, sufficient contrast.</p></div>
+  </section>
+</div>
+<footer>
+  <p>&copy; 2026 samplelib.com — responsive demo</p>
+</footer>
+</body>
+</html>

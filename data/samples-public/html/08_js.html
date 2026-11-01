@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sample HTML with inline JavaScript</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+  button { padding: .5rem 1rem; font-size: 1rem; cursor: pointer; }
+  #output { margin-top: 1rem; padding: 1rem; background: #f4f4f4; border-radius: 6px; min-height: 40px; }
+</style>
+</head>
+<body>
+<h1>Sample HTML with JavaScript</h1>
+<p>Click the button to update the page.</p>
+<button id="btn">Click me</button>
+<div id="output">Output appears here.</div>
+<script>
+  (function () {
+    var count = 0;
+    document.getElementById('btn').addEventListener('click', function () {
+      count += 1;
+      document.getElementById('output').textContent =
+        'Clicked ' + count + ' time' + (count === 1 ? '' : 's') + ' at ' + new Date().toLocaleTimeString();
+    });
+  })();
+</script>
+</body>
+</html>
